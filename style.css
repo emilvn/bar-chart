@@ -9,7 +9,6 @@ header{
 
 }
 #barChart{
-    outline: 1px solid black;
     height: 300px;
     position: relative;
     display: grid;
@@ -19,5 +18,4 @@ header{
 #barChart div{
     background-color: lime;
     width: 2vw;
-    outline: 1px solid black;
 }
