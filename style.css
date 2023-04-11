@@ -1,0 +1,13 @@
+#barChart{
+    outline: 1px solid black;
+    height: 100px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(40, 1fr);
+}
+
+#barChart div{
+    background-color: darkcyan;
+    width: 2vw;
+    outline: 1px solid black;
+}
