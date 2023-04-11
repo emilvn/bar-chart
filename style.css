@@ -1,3 +1,13 @@
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header{
+    color: white;
+    text-align: center;
+    background-color: darkcyan;
+
+}
 #barChart{
     outline: 1px solid black;
     height: 300px;
@@ -6,7 +16,6 @@
     grid-template-columns: repeat(40, 1fr);
     transform: rotate(180deg) scale(-1, 1);
 }
-
 #barChart div{
     background-color: darkcyan;
     width: 2vw;
