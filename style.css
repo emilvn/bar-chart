@@ -1,15 +1,14 @@
 body{
+    background-color: black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 header{
     color: white;
     text-align: center;
-    background-color: darkcyan;
 
 }
 #barChart{
-    background-color: whitesmoke;
     outline: 1px solid black;
     height: 300px;
     position: relative;
@@ -18,7 +17,7 @@ header{
     transform: rotate(180deg) scale(-1, 1);
 }
 #barChart div{
-    background-color: darkcyan;
+    background-color: lime;
     width: 2vw;
     outline: 1px solid black;
 }
