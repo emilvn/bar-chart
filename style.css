@@ -1,4 +1,4 @@
-/* body and header */
+/* body, header and footer */
 body{
     margin: 0;
     background-color: black;
@@ -8,6 +8,14 @@ header{
     color: white;
     text-align: center;
 
+}
+footer{
+    color: lime;
+    text-align: center;
+    font-size: 0.5em;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 /* barchart section */
 main{
