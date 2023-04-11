@@ -4,10 +4,15 @@ window.addEventListener("load", main);
 function main() {
     const customers = getQueueData();
     setInterval(() => {
-        addQueueData(customers);
-        infoWindow(customers);
+        updateBarChart(customers);
     }, 1000);
-    document.querySelector("#barChart").classList.add("slide");
+}
+
+function updateBarChart(customers) {
+    removeAnimation(customers);
+    addAnimation(customers);
+    addQueueData(customers);
+    displayInfoWindow(customers);
 }
 
 function addQueueData(customers) {
@@ -31,11 +36,11 @@ function getNumberOfCustomers() {
 
 function setBarHeight(customers) {
     for (let i = 0; i < customers.length; i++){
-        document.querySelectorAll("#barChart div")[i].style.height = `${customers[i] * 4}px`;
+        document.querySelectorAll("#barChart div")[i].style.height = `${customers[i]}vh`;
     }
 }
 
-function infoWindow(customers) {
+function displayInfoWindow(customers) {
     const infoWindow = document.querySelector("#info-window")
     for (let i = 0; i < customers.length; i++){
         document.querySelectorAll("#barChart div")[i].addEventListener("mouseover", () => {
@@ -45,5 +50,17 @@ function infoWindow(customers) {
         document.querySelectorAll("#barChart div")[i].addEventListener("mouseout", () => {
             infoWindow.style.display = "none";
         })
+    }
+}
+function addAnimation(customers) {
+    for (let i = 0; i < customers.length; i++){
+        document.querySelectorAll("#barChart div")[i].classList.add("slide");
+    }
+}
+function removeAnimation(customers) {
+    for (let i = 0; i < customers.length; i++){
+        const bar = document.querySelectorAll("#barChart div")[i];
+        bar.classList.remove("slide");
+        bar.offsetHeight;
     }
 }

@@ -22,8 +22,9 @@ main{
 }
 #barChart div{
     background-color: lime;
-    width: 2vw;
-    transition: height 0.01s ease-in-out;
+    width: 2.5vw;
+    border: 1px solid black;
+    transition: 0.1 linear;
 }
 #barChart div:hover{
     background-color: red;
@@ -31,17 +32,14 @@ main{
 
 .slide{
     animation-name: slide;
-    animation-duration: 1s;
+    animation-duration: 1000ms;
     animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 @keyframes slide {
-    0%{
-        left: 1vw;
-    }
     100%{
-        left: -1vw;
+        transform: translate(-100%);
     }
 }
 
