@@ -1,4 +1,5 @@
 body{
+    margin: 0;
     background-color: black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
@@ -8,14 +9,35 @@ header{
     text-align: center;
 
 }
+main{
+    transform: rotate(180deg) scale(-1, 1);
+    position: relative;
+    overflow: hidden;
+}
 #barChart{
     height: 300px;
     position: relative;
     display: grid;
     grid-template-columns: repeat(40, 1fr);
-    transform: rotate(180deg) scale(-1, 1);
 }
 #barChart div{
     background-color: lime;
     width: 2vw;
+    transition: height 0.01s ease-in-out;
+}
+
+.slide{
+    animation-name: slide;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+@keyframes slide {
+    0%{
+        left: 1vw;
+    }
+    100%{
+        left: -1vw;
+    }
 }

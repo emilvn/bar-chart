@@ -6,6 +6,7 @@ function main() {
     setInterval(() => {
         addQueueData(customers);
     }, 1000);
+        document.querySelector("#barChart").classList.add("slide");
 }
 
 function addQueueData(customers) {
