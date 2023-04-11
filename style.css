@@ -9,6 +9,7 @@ header{
 
 }
 #barChart{
+    background-color: darkgray;
     outline: 1px solid black;
     height: 300px;
     position: relative;
