@@ -1,9 +1,10 @@
 #barChart{
     outline: 1px solid black;
-    height: 100px;
+    height: 300px;
     position: relative;
     display: grid;
     grid-template-columns: repeat(40, 1fr);
+    transform: rotate(180deg) scale(-1, 1);
 }
 
 #barChart div{
