@@ -2,16 +2,25 @@
 window.addEventListener("load", main);
 
 function main() {
+    const customers = getQueueData();
+    setInterval(() => {
+        addQueueData(customers);
+    }, 1000);
+}
+
+function addQueueData(customers) {
+    const queueSize = getNumberOfCustomers();
+    customers.push(queueSize);
+    customers.shift();
+    setBarHeight(customers);
+}
+
+function getQueueData() {
     const customers = [];
-    for (let i = 0; i < 40; i++){
+    for (let i = 0; i < 40; i++) {
         customers[i] = getNumberOfCustomers();
     }
-    setInterval(() => {
-        const queueSize = getNumberOfCustomers();
-        customers.push(queueSize);
-        customers.shift();
-        setBarHeight(customers);
-    }, 1000);
+    return customers;
 }
 
 function getNumberOfCustomers() {
