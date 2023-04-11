@@ -36,7 +36,7 @@ function getNumberOfCustomers() {
 function setBarHeight(customers) {
     for (let i = 0; i < customers.length; i++){
         const bar = document.querySelectorAll("#barChart div")[i];
-        bar.style.height = `${customers[i]}vh`;
+        bar.style.height = `${customers[i]}vw`;
         bar.querySelector("span").textContent = customers[i];
     }
 }

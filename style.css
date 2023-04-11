@@ -24,7 +24,7 @@ main{
     overflow: hidden;
 }
 #barChart{
-    height: 300px;
+    height: 35vw;
     position: relative;
     display: grid;
     grid-template-columns: repeat(40, 1fr);
