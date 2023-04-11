@@ -25,6 +25,9 @@ main{
     width: 2vw;
     transition: height 0.01s ease-in-out;
 }
+#barChart div:hover{
+    background-color: red;
+}
 
 .slide{
     animation-name: slide;
@@ -40,4 +43,17 @@ main{
     100%{
         left: -1vw;
     }
+}
+
+#info-window{
+    position: absolute;
+    top: 30vw;
+    left: 50vw;
+    z-index: 999;
+    display: none;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    font-size: 1em;
+    border-radius: 1em;
 }

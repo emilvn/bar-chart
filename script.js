@@ -5,8 +5,9 @@ function main() {
     const customers = getQueueData();
     setInterval(() => {
         addQueueData(customers);
+        infoWindow(customers);
     }, 1000);
-        document.querySelector("#barChart").classList.add("slide");
+    document.querySelector("#barChart").classList.add("slide");
 }
 
 function addQueueData(customers) {
@@ -31,5 +32,18 @@ function getNumberOfCustomers() {
 function setBarHeight(customers) {
     for (let i = 0; i < customers.length; i++){
         document.querySelectorAll("#barChart div")[i].style.height = `${customers[i] * 4}px`;
+    }
+}
+
+function infoWindow(customers) {
+    const infoWindow = document.querySelector("#info-window")
+    for (let i = 0; i < customers.length; i++){
+        document.querySelectorAll("#barChart div")[i].addEventListener("mouseover", () => {
+            infoWindow.textContent = customers[i];
+            infoWindow.style.display = "block";
+        })
+        document.querySelectorAll("#barChart div")[i].addEventListener("mouseout", () => {
+            infoWindow.style.display = "none";
+        })
     }
 }
