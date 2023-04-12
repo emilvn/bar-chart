@@ -38,7 +38,7 @@ function setBarHeight(customers) {
         const bar = document.querySelectorAll("#barChart div")[i];
         bar.style.height = `${customers[i]}vw`;
         bar.querySelector("span").textContent = customers[i];
-        bar.style.filter = `opacity(${i*0.05})`
+        bar.style.filter = `opacity(${i*0.05})`;
     }
 }
 /* ========== event listeners for showing bar value on mouse hover ========== */
