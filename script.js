@@ -30,17 +30,28 @@ function getQueueData() {
     return customers;
 }
 function getNumberOfCustomers() {
-    return Math.floor(Math.random() * 32);
+    return Math.ceil(Math.random() * 32);
 }
 /* ========== sets bar height and changes the bar text value to it ========== */
 function setBarHeight(customers) {
+    const containerHeight = 35;
+    const maxValue = 32;
     for (let i = 0; i < customers.length; i++){
         const bar = document.querySelectorAll("#barChart div")[i];
-        bar.style.height = `${customers[i]}vw`;
-        bar.querySelector("span").textContent = customers[i];
-        bar.style.filter = `opacity(${i*0.05})`;
+        const height = customers[i] / maxValue * containerHeight;
+        bar.style.height = `${height}vw`;
+        setBarValue(bar, customers, i);
+        setBarOpacity(bar, i);
     }
 }
+function setBarValue(bar, customers, i) {
+    bar.querySelector("span").textContent = customers[i];
+}
+function setBarOpacity(bar, i) {
+    const opacityMultiplier = 0.05;
+    bar.style.filter = `opacity(${i * opacityMultiplier})`;
+}
+
 /* ========== event listeners for showing bar value on mouse hover ========== */
 function handleBarHover(customers) {
     for (let i = 0; i < customers.length; i++){
